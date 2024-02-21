@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            function greeting(name,callback){          
+                console.log("hello" + name);
+                callback();
+            }
+            //Calback function
+            function showDone(){
+                console.log('Done greeting!');
+            }
+            //Passing Function as an argument
+            greeting('Alice',showDone);
+
+            async function checkRoomStatus(){
+                letPromiseToCleanTheRoom = new Promise((resolve,reject) => {
+                    let isClean = true;
+
+                    if(isClean){
+                        resolve('Clean');
+                    }else{
+                        reject('Not Clean');
+                    }
+                }
+           ) 
+           let result = await letPromiseToCleanTheRoom;
+            console.log("The room is "+result)};
+           
+            checkRoomStatus();
+        </script>
+    </body>
+</html>
+
